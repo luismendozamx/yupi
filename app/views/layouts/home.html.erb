@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<%= render 'shared/navigation' %>
+<%= render 'shared/home_navigation' %>
 
 <% if flash[:notice] %>
   <div id="alert" class="alert alert-success alert-dismissible" role="alert">
@@ -29,7 +29,7 @@
   </div>
 <% end %>
 
-<div id="app-container">
+<div id="home-container">
   <%= yield %>
 </div>
 

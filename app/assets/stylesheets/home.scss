@@ -1,0 +1,37 @@
+#hero {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(170deg, #7952f9 , #5fd7b0);
+  color: #FFF;
+}
+
+#home-nav {
+  .navbar-nav li {
+    a {
+      color: #FFF;
+
+      &:hover {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    .btn-rnd {
+      background-color: transparent;
+      border: 1px solid #FFF;
+      border-radius: 20px;
+      padding: 5px 20px;
+      margin-top: 14.5px;
+
+      &:hover {
+        background-color: #5fd7b0;
+        border-color: #5fd7b0;
+        text-decoration: none;
+      }
+    }
+  }
+
+
+}
