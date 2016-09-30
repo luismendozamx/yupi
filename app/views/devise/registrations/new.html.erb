@@ -36,7 +36,7 @@
           <div role="tabpanel" class="tab-pane" id="step-2">
             <div class="form-inputs">
               <%= f.input :birthdate, start_year: Date.today.year - 60, end_year: Date.today.year, required: true, label: "Fecha de Nacimiento" %>
-              <%= f.input :gender, collection: User::GENDER_OPTIONS.sort.map {|k,v| [v,k]}, required: true, label: "Sexo" %>
+              <%= f.input :gender, collection: User::GENDER_OPTIONS.sort.map {|k,v| [v,k]}, required: true, label: "Género" %>
               <%= f.input :id_type, required: true, collection: User::ID_OPTIONS.sort.map {|k,v| [v,k]}, required: true, label: "Tipo de ID" %>
               <%= f.input :id_number, required: true, label: "Número de Identificación" %>
             </div>

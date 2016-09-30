@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
                                   dependent:   :destroy
 
   GENDER_OPTIONS = {
-      male: "Hombre",
-      female: "Mujer",
+      male: "Masculino",
+      female: "Femenino",
       other: "Otro"
   }
 
