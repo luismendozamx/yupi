@@ -24,6 +24,23 @@ User.create(
 )
 
 User.create(
+  first_name: "Luis",
+  last_name: "Mendoza",
+  email: "luis@mendoza.io",
+  password: "luismendoza",
+  phone_number: "5535668392",
+  gender: "Male",
+  id_type: "IFE",
+  id_number: "989382793872",
+  address_street: "Calle",
+  address_number: 1,
+  address_city: "Mexico",
+  address_zip_code: 05100,
+  user_type: "user",
+  balance: 14500.0
+)
+
+User.create(
   first_name: "Juan",
   last_name: "Pérez",
   email: "juan@gbm.com.mx",
