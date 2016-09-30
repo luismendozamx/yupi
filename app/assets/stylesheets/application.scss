@@ -22,8 +22,8 @@
   width: 100%;
 }
 
-#app-container {
-  margin-top: 55px;
+.icon-bar {
+  background-color: #fff;
 }
 
 #app-sidebar {
@@ -47,13 +47,24 @@
 #alert {
   z-index: 1050;
   position: fixed;
-  bottom: 0;
+  top: 0;
   right: 0;
   left: 0;
   margin-bottom: 0;
 }
 
 #sign-in-container {
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+#login-header {
+  background-image: linear-gradient(-178deg, #7952F9 1%, #5FD7B0 100%, #FDDD7F 100%);
+  color: #FFF;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
+
+  p {
+    font-size: 24px;
+  }
 }

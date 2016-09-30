@@ -8,5 +8,10 @@ Rails.application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
 
+  post 'transfers/send_money'
+  post 'transfers/pay_service'
+  get 'dashboard/transferir', to: 'dashboard#transfer_money', as: :transfer_money
+  get 'dashboard/pagar', to: 'dashboard#pay_service', as: :pay_service
+
   get 'dashboard/home', as: :dashboard_home
 end

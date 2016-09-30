@@ -1,3 +1,68 @@
-<h1>Bienvenido <%= current_user.first_name %>!</h1>
+<section id="dashboard-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h2>¡Hola, <%= current_user.first_name %>!</h2>
+        <h2><%= number_to_currency(current_user.balance, locale: I18n.default_locale) %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <%= link_to "Transferir", transfer_money_path, class: "btn btn-rnd" %>
+        <%= link_to "Pagar Servicio", pay_service_path, class: "btn btn-rnd" %>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>Balance: <%= current_user.balance %></p>
+<section id="resume-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h3>Envíos</h3>
+        <table class="table table-striped">
+          <thead>
+            <th>Fecha</th>
+            <th></th>
+            <th></th>
+            <th>Monto</th>
+          </thead>
+          <tbody>
+            <% @transfers_sent.each do |transfer| %>
+              <tr>
+                <td><%= transfer.created_at.to_s(:short) %></td>
+                <td><%= transfer.receiver.first_name %></td>
+                <% if transfer.receiver.user_type == "user" %>
+                  <td><%= transfer.receiver.email %></td>
+                <% else %>
+                  <td>Pago a Servicio</td>
+                <% end %>
+                <td class="text-danger">-<%= number_to_currency(transfer.amount, locale: I18n.default_locale) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <hr>
+        <h3>Depósitos</h3>
+        <table class="table table-striped">
+          <thead>
+            <th>Fecha</th>
+            <th></th>
+            <th></th>
+            <th>Monto</th>
+          </thead>
+          <tbody>
+            <% @transfers_received.each do |transfer| %>
+              <tr>
+                <td><%= transfer.created_at.to_s(:short) %></td>
+                <td><%= transfer.sender.first_name %></td>
+                <td>Depósito</td>
+                <td class="text-success">+<%= number_to_currency(transfer.amount, locale: I18n.default_locale) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

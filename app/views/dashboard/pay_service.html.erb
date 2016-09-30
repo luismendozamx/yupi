@@ -1,0 +1,15 @@
+<section id="pay-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h2 class="text-center">Pagar Servicio</h2>
+        <hr>
+        <%= simple_form_for @transfer, url: transfers_pay_service_path do |f| %>
+          <%= f.input :receiver_id, collection: @services, placeholder: "Servicio", label_method: :first_name ,label: false %>
+          <%= f.input :amount, placeholder: "Monto", label: false %>
+          <%= f.button :submit, "Enviar", class: "btn-success btn-fill" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
